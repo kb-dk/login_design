@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center my-5">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="language col-12 text-end text-decoration-underline pb-2 pe-3">
+                <div class="">In English</div>
+            </div>
+            <div class="card">
+                <h1 class="card-header text-center p-4">
+                    Log ind i
+                    <img class="logo" src="assets/image/logo-digital.svg"/>
+                </h1>
+                <div class="card-body p-0">
+                    <div class="row m-0 wayf-mitid">
+                        <div class="col-12 p-4">
+                            <div class="row pb-4">
+                                <h2>Login med:</h2>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <div class="wayf p-4">
+                                        <div class="image"></div>
+                                    </div>
+                                    <i class="float-end material-icons rdl-tooltip-icon" data-bs-placement="bottom"
+                                       data-bs-toggle="tooltip" data-bs-html="true"
+                                       data-bs-title="<div>Hvis du er studerende eller ansat ved: <ul><li>Aarhus Universitet</li><li>Københavns Universitet</li><li>Roskilde Universitet</li><li>Aarhus Universitetshospital</li><li>Copenhagen University Hospital</li><li>IT-Universitet</li></ul></div>"
+                                       tabindex="0"></i>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="mitid p-4">
+                                        <div class="image"></div>
+                                    </div>
+                                    <i class="float-end material-icons rdl-tooltip-icon" data-bs-placement="bottom"
+                                       data-bs-toggle="tooltip" data-bs-html="true"
+                                       data-bs-title="<div>Hvis du er privatbruger eller har glemt dit password.</div>"
+                                       tabindex="0"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-0">
+                        <div class="col-12 p-4">
+                            <form class="pt-2">
+                                <div class="d-grid gap-4">
+                                    <h2 class="">
+                                        Eller login med e-mail og bibliotekspassword:
+                                        <i class="float-end material-icons rdl-tooltip-icon" data-bs-placement="bottom"
+                                           data-bs-toggle="tooltip" data-bs-html="true"
+                                           data-bs-title="<div>Hvis du er uden CPR</div>" tabindex="0"></i>
+                                    </h2>
+                                    <input type="text" class="form-control " name="email"
+                                           spellcheck="false" placeholder="Indtast din e-mail">
+                                    <input type="text" class="form-control " name="password"
+                                           spellcheck="false" placeholder="Indtast din bibliotekssystemkode">
+                                    <a href="#">Glemt din adgangskode? Få en ny her</a>
+                                </div>
+                                <div class="d-grid gap-4 pt-6">
+                                    <button class="btn btn-primary btn-block" type="button">
+                                        Login
+                                    </button>
+                                    <button class="btn btn-outline-primary" type="button">
+                                        Opret dig som bruger
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="assets/style/style.css">
+
+<script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+</script>
+</body>
+</html>

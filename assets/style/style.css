@@ -1,0 +1,212 @@
+:root {
+    --rdl-dark-blue: #002E70;
+    --rdl-light-blue: #CAF0FE;
+
+    --rdl-btn-primary-bg: var(--rdl-dark-blue);
+    --rdl-btn-primary-border: var(--rdl-dark-blue);
+    --rdl-btn-primary-hover-bg: #001e4a;
+    --rdl-btn-primary-hover-border: #00193d;
+
+    --rdl-font-size-xs: 0.75rem;
+    --rdl-font-size-s: 0.875rem;
+    --rdl-font-size-m: 1rem;
+    --rdl-font-size-l: 1.125rem;
+    --rdl-font-size-xl: 1.25rem;
+    --rdl-font-size-xxl: 1.375rem;
+    --rdl-font-size-xxxl: 1.5rem;
+    --rdl-font-size-xxxxl: 2.25rem;
+    --rdl-font-size-xxxxxl: 4rem;
+    --rdl-font-sans-serif: "noway", sans-serif;
+    --rdl-font-regular-sans-serif: "nowayregular", sans-serif;
+}
+
+@font-face {
+    font-family: 'nowayregular';
+    src: url('../font/Noway-Regular-webfont/noway-regular-webfont.eot');
+    src: url('../font/Noway-Regular-webfont/noway-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/Noway-Regular-webfont/noway-regular-webfont.woff2') format('woff2'),
+    url('../font/Noway-Regular-webfont/noway-regular-webfont.woff') format('woff'),
+    url('../font/Noway-Regular-webfont/noway-regular-webfont.ttf') format('truetype'),
+    url('../font/Noway-Regular-webfont/noway-regular-webfont.svg#nowayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'noway';
+    src: url('../font/Noway-Medium-webfont/noway-medium-webfont.eot');
+    src: url('../font/Noway-Medium-webfont/noway-medium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/Noway-Medium-webfont/noway-medium-webfont.woff2') format('woff2'),
+    url('../font/Noway-Medium-webfont/noway-medium-webfont.woff') format('woff'),
+    url('../font/Noway-Medium-webfont/noway-medium-webfont.ttf') format('truetype'),
+    url('../font/Noway-Medium-webfont/noway-medium-webfont.svg#nowaymedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    src: url('../font/MaterialIcons-Regular.ttf');
+}
+
+.material-icons {
+    font-family: "Material Icons", serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga";
+}
+
+body {
+    font-family: var(--rdl-font-regular-sans-serif);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: var(--rdl-font-size-xxxl);
+}
+
+h2 {
+    font-family: var(--rdl-font-sans-serif);
+    font-size: var(--rdl-font-size-l);
+}
+
+.language {
+    font-size: var(--rdl-font-size-s);
+}
+
+.container-fluid .row .card {
+    border: 1px solid #707070;
+    border-radius: 0;
+}
+
+.card-header {
+    color: var(--rdl-dark-blue);
+    background-color: white;
+    font-size: var(--rdl-font-size-xxxl);
+    border-bottom: 0;
+}
+
+.card-header img.logo {
+    width: 150px;
+}
+
+.card-body .wayf-mitid {
+    background-color: var(--rdl-light-blue);
+    line-height: 1.3rem;
+    font-size: var(--rdl-font-size-l);
+}
+
+.mitid, .wayf {
+    background-color: white;
+    border: 1px solid #707070;
+}
+
+.mitid .image, .wayf .image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    height: 50px;
+}
+
+.mitid .image {
+    background-image: url("../image/mitid.svg");
+}
+
+.wayf .image {
+    background-image: url('../image/wayf.svg');
+}
+
+.tooltip {
+    font-family: var(--rdl-font-sans-serif);
+}
+
+.popover {
+    font-family: var(--rdl-font-sans-serif);
+}
+
+.tooltip-inner {
+    background-color: var(--rdl-dark-blue);
+    text-align: left;
+    padding: 1rem;
+    max-width: 300px;
+}
+
+.tooltip.show {
+    opacity: 1;
+}
+
+.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before, .bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: var(--rdl-dark-blue);
+}
+
+
+.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before, .bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: var(--rdl-dark-blue);
+}
+
+.tooltip ul {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}
+
+.tooltip ul li {
+    padding-bottom: 0.5rem;
+}
+
+.rdl-tooltip-icon {
+    margin-left: 4px;
+    margin-top: 4px;
+    font-size: 1.2rem;
+    color: var(--rdl-dark-blue);
+}
+
+/* Bootstrap override for primary button */
+.btn-primary {
+    background-color: var(--rdl-btn-primary-bg);
+    border-color: var(--rdl-btn-primary-border)
+}
+
+.btn-primary:hover {
+    background-color: var(--rdl-btn-primary-hover-bg);
+    border-color: var(--rdl-btn-primary-hover-border);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: var(--rdl-btn-primary-bg);
+    border-color: var(--rdl-btn-primary-hover-border);
+}
+
+.btn-check:active + .btn-primary:focus, .btn-check:checked + .btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(38,77,133,.5);
+}
+
+.btn-check:focus + .btn-primary, .btn-primary:focus {
+    background-color: var(--rdl-btn-primary-bg);
+    border-color: var(--rdl-btn-primary-border);
+    box-shadow: 0 0 0 0.2rem rgba(38,77,133,.5);
+}
+
+.btn-check:active + .btn-primary, .btn-check:checked + .btn-primary, .btn-primary.active, .btn-primary:active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: var(--rdl-btn-primary-bg);
+    border-color: var(--rdl-btn-primary-border);
+}
+
+/* */
+
