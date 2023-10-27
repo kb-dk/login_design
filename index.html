@@ -3,14 +3,15 @@
 <head>
     <meta charset="ISO-8859-1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style/style.css">
     <title>Login</title>
 </head>
 <body>
 
 <div class="container-fluid">
     <div class="row justify-content-center align-items-center my-5">
-        <div class="col col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+        <div class="col col-md-8 col-lg-7 col-xl-6 col-xxl-5 col-xxl-4">
             <div class="language text-end text-decoration-underline pb-2 pe-3">
                 <div class="">In English</div>
             </div>
@@ -25,50 +26,91 @@
                             <div class="row pb-4">
                                 <h2>Login med:</h2>
                             </div>
-                                <div class="row g-3 row-cols-1 row-cols-md-2">
-                                    <div class="col">
-                                        <div class="wayf p-4">
-                                            <div class="image"></div>
-                                        </div>
-                                        <i class="float-end material-icons rdl-tooltip-icon" data-bs-placement="bottom"
-                                           data-bs-toggle="tooltip" data-bs-html="true"
-                                           data-bs-title="<div>Hvis du er studerende eller ansat ved: <ul><li>Aarhus Universitet</li><li>Københavns Universitet</li><li>Roskilde Universitet</li><li>Aarhus Universitetshospital</li><li>Copenhagen University Hospital</li><li>IT-Universitet</li></ul></div>"
-                                           tabindex="0">help</i>
+                            <div class="row g-3 row-cols-1 row-cols-md-2">
+                                <div class="col">
+                                    <div class="wayf px-4">
+                                        <div class="image"></div>
                                     </div>
-                                    <div class="col">
-                                        <div class="mitid p-4">
-                                            <div class="image"></div>
-                                        </div>
-                                        <i class="float-end material-icons rdl-tooltip-icon" data-bs-placement="bottom"
-                                           data-bs-toggle="tooltip" data-bs-html="true"
-                                           data-bs-title="<div>Hvis du er privatbruger eller har glemt dit password.</div>"
-                                           tabindex="0">help</i>
-                                    </div>
+                                    <i class="float-end material-icons rdl-tooltip-icon" data-bs-placement="bottom"
+                                       data-bs-toggle="tooltip" data-bs-html="true"
+                                       data-bs-title="<div>Hvis du er studerende eller ansat ved: <ul><li>Aarhus Universitet</li><li>Københavns Universitet</li><li>Roskilde Universitet</li><li>Aarhus Universitetshospital</li><li>Copenhagen University Hospital</li><li>IT-Universitet</li></ul></div>"
+                                       tabindex="0">help</i>
                                 </div>
+                                <div class="col">
+                                    <div class="mitid px-4 py-5">
+                                        <div class="image"></div>
+                                    </div>
+                                    <i class="float-end material-icons rdl-tooltip-icon" data-bs-placement="bottom"
+                                       data-bs-toggle="tooltip" data-bs-html="true"
+                                       data-bs-title="<div>Hvis du er privatbruger eller har glemt dit password.</div>"
+                                       tabindex="0">help</i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row m-0">
-                        <div class="col p-4">
-                            <form class="pt-2">
+                    <div class="row m-0 email">
+                        <div class="col px-4 py-5">
+                            <form class="needs-validation" novalidate>
                                 <div class="d-grid gap-4">
                                     <h2 class="">
                                         Eller login med e-mail og bibliotekspassword:
-                                        <i class="float-end material-icons rdl-tooltip-icon" data-bs-placement="bottom"
+                                        <i class="float-end material-icons rdl-tooltip-icon"
+                                           data-bs-placement="bottom"
                                            data-bs-toggle="tooltip" data-bs-html="true"
                                            data-bs-title="<div>Hvis du er uden CPR</div>" tabindex="0">help</i>
                                     </h2>
-                                    <input type="text" class="form-control " name="email"
-                                           spellcheck="false" placeholder="Indtast din e-mail">
-                                    <input type="text" class="form-control " name="password"
-                                           spellcheck="false" placeholder="Indtast din bibliotekssystemkode">
+                                    <div class="input-group border">
+                                        <div class="form-floating">
+                                            <input required type="text" id="email" class="form-control border-0 rounded-0" name="email" aria-describedby="input-help-rdl_77546503" spellcheck="false">
+                                            <label for="password">Indtast din e-mail</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group border">
+                                        <div class="form-floating">
+                                            <input required type="password" id="password" class="form-control border-0 rounded-0" name="password" aria-describedby="input-help-rdl_77546503" spellcheck="false">
+                                            <label for="password">Indtast din bibliotekssystemkode</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-link px-3 m-0" type="button" id="visibility" title="Vis password">
+                                                <span class="visually-hidden">Vis password</span>
+                                                <i class="material-icons rdl-visibility-icon" aria-hidden="true">visibility_off</i>
+                                            </button>
+                                        </div>
+                                        <script type="module">
+                                            const inputToggleButton = document.querySelector('#visibility');
+                                            const inputToggleIcon = document.querySelector('#visibility .material-icons');
+                                            const inputPasswordField = document.querySelector('#password');
+
+                                            inputToggleButton.addEventListener('click', function (e) {
+                                                // Toggle input type
+                                                const type = inputPasswordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                                                inputPasswordField.setAttribute('type', type);
+
+                                                // Toggle icon
+                                                if (inputToggleIcon.innerHTML == "visibility") {
+                                                    inputToggleIcon.innerHTML = "visibility_off",
+                                                        inputToggleButton.title = "Skjul password"
+                                                } else if (inputToggleIcon.innerHTML == "visibility_off") {
+                                                    inputToggleIcon.innerHTML = "visibility",
+                                                        inputToggleButton.title = "Vis password"
+                                                } else {
+                                                    null
+                                                }
+                                            });
+                                        </script>
+                                    </div>
+                                    <div id="invalid-feedback" class="invalid-feedback invalid-tooltip">
+                                        Forkert brugernavn eller pasword.
+                                    </div>
                                     <a href="#">Glemt din adgangskode? Få en ny her</a>
                                 </div>
-                                <div class="d-grid gap-4 pt-6">
-                                    <button class="btn btn-primary btn-block" type="button">
+                                <div class="d-grid gap-4 mt-5">
+                                    <button class="btn btn-primary btn-lg rounded-1 p-3" type="submit">
                                         Login
                                     </button>
-                                    <button class="btn btn-outline-primary" type="button">
+                                    <button class="create-user btn btn-outline-primary btn-lg rounded-1 p-3" type="button">
                                         Opret dig som bruger
+                                        <i class="material-icons rdl-user-icon" aria-hidden="true">account_circle</i>
                                     </button>
                                 </div>
                             </form>
@@ -80,13 +122,43 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="assets/style/style.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
 
 <script>
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+</script>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated');
+                if (form.querySelectorAll('.form-control:invalid').length){
+                    document.getElementById("invalid-feedback").style.display = "block";
+                    document.getElementsByTagName('form')[0].classList.add("rdl-invalid-form");
+                }
+            }, false)
+        })
+    })()
 </script>
 </body>
 </html>
