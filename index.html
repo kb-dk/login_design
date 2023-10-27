@@ -18,7 +18,7 @@
             <div class="card">
                 <h1 class="card-header text-center p-4">
                     Log ind i
-                    <img class="logo" src="assets/image/logo-digital.svg"/>
+                    <img class="logo" src="assets/image/logo-digital.svg" alt="KB's logo"/>
                 </h1>
                 <div class="card-body p-0">
                     <div class="row m-0 wayf-mitid">
@@ -62,7 +62,7 @@
                                     <div class="input-group border">
                                         <div class="form-floating">
                                             <input required type="text" id="email" class="form-control border-0 rounded-0" name="email" aria-describedby="input-help-rdl_77546503" spellcheck="false">
-                                            <label for="password">Indtast din e-mail</label>
+                                            <label for="email">Indtast din e-mail</label>
                                         </div>
                                     </div>
                                     <div class="input-group border">
@@ -81,20 +81,18 @@
                                             const inputToggleIcon = document.querySelector('#visibility .material-icons');
                                             const inputPasswordField = document.querySelector('#password');
 
-                                            inputToggleButton.addEventListener('click', function (e) {
+                                            inputToggleButton.addEventListener('click', function () {
                                                 // Toggle input type
                                                 const type = inputPasswordField.getAttribute('type') === 'password' ? 'text' : 'password';
                                                 inputPasswordField.setAttribute('type', type);
 
                                                 // Toggle icon
-                                                if (inputToggleIcon.innerHTML == "visibility") {
-                                                    inputToggleIcon.innerHTML = "visibility_off",
-                                                        inputToggleButton.title = "Skjul password"
-                                                } else if (inputToggleIcon.innerHTML == "visibility_off") {
-                                                    inputToggleIcon.innerHTML = "visibility",
-                                                        inputToggleButton.title = "Vis password"
-                                                } else {
-                                                    null
+                                                if (inputToggleIcon.innerHTML === "visibility") {
+                                                    inputToggleIcon.innerHTML = "visibility_off";
+                                                    inputToggleButton.title = "Skjul password";
+                                                } else if (inputToggleIcon.innerHTML === "visibility_off") {
+                                                    inputToggleIcon.innerHTML = "visibility";
+                                                    inputToggleButton.title = "Vis password";
                                                 }
                                             });
                                         </script>
@@ -122,14 +120,8 @@
     </div>
 </div>
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-        crossorigin="anonymous"></script>
+<script src="assets/js/popper_2.11.6.min.js"></script>
+<script src="assets/js/bootstrap_5.2.3.min.js"></script>
 
 <script>
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
