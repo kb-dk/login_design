@@ -3,7 +3,7 @@
 <head>
     <meta charset="ISO-8859-1">
     <link href="assets/style/bootstrap_5.2.3.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link href="assets/style/style.css" rel="stylesheet" >
     <title>Login</title>
 </head>
 <body>
@@ -75,26 +75,6 @@
                                                 <i class="material-icons rdl-visibility-icon" aria-hidden="true">visibility_off</i>
                                             </button>
                                         </div>
-                                        <script type="module">
-                                            const inputToggleButton = document.querySelector('#visibility');
-                                            const inputToggleIcon = document.querySelector('#visibility .material-icons');
-                                            const inputPasswordField = document.querySelector('#password');
-
-                                            inputToggleButton.addEventListener('click', function () {
-                                                // Toggle input type
-                                                const type = inputPasswordField.getAttribute('type') === 'password' ? 'text' : 'password';
-                                                inputPasswordField.setAttribute('type', type);
-
-                                                // Toggle icon
-                                                if (inputToggleIcon.innerHTML === "visibility") {
-                                                    inputToggleIcon.innerHTML = "visibility_off";
-                                                    inputToggleButton.title = "Skjul password";
-                                                } else if (inputToggleIcon.innerHTML === "visibility_off") {
-                                                    inputToggleIcon.innerHTML = "visibility";
-                                                    inputToggleButton.title = "Vis password";
-                                                }
-                                            });
-                                        </script>
                                     </div>
                                     <div id="invalid-feedback" class="invalid-feedback invalid-tooltip">
                                         Forkert brugernavn eller pasword.
@@ -121,35 +101,7 @@
 
 <script src="assets/js/popper_2.11.6.min.js"></script>
 <script src="assets/js/bootstrap_5.2.3.min.js"></script>
+<script src="assets/js/script.js"></script>
 
-<script>
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-</script>
-<script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (() => {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated');
-                if (form.querySelectorAll('.form-control:invalid').length){
-                    document.getElementById("invalid-feedback").style.display = "block";
-                    document.getElementsByTagName('form')[0].classList.add("rdl-invalid-form");
-                }
-            }, false)
-        })
-    })()
-</script>
 </body>
 </html>
